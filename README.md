@@ -101,6 +101,7 @@
 |  **舊版合約**            | **ReadFiComplianceManager (V1)**                      | `contracts/contracts/ReadFiComplianceManager.sol`   | Custom                  | 初版合規邏輯，已被 V2 取代；保留作為開發參考。                                                     | 🕓 不再使用                       |
 
 ---
+```
 ### 各合約間互動關係
 
 [Frontend / DApp]
@@ -114,11 +115,10 @@
    │
    └─→ 支付 / 分潤 → [READToken.sol]
 
-
 ---
 
 ##  專案結構
-
+```
 ```
 readfi-mvp/
 ├── backend/
