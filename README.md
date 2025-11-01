@@ -102,14 +102,18 @@
 
 ---
 ### 各合約間互動關係
-flowchart TD
-    A[Frontend / DApp] -->|使用者簽章 + metadata| B[ReadFiMintGateway.sol]
-    B -->|呼叫| C[ReadFiComplianceManagerV2.sol]
-    C -->|若受規範：呼叫 OPL| D[ComplianceGateway.sol @ Oasis]
 
-    B --> E[ReadFiBooks1155.sol]
-    E -->|鑄造 NFT 書籍| G[NFT 書籍]
-    E -->|支付 / 分潤| F[READToken.sol]
+[Frontend / DApp]
+   │ 使用者簽章 + metadata
+   ▼
+[ReadFiMintGateway.sol] ──→ 呼叫 ──→ [ReadFiComplianceManagerV2.sol]
+   │                                   │
+   │                                   └─→（若受規範）呼叫 OPL → [ComplianceGateway.sol @ Oasis]
+   ▼
+[ReadFiBooks1155.sol] ──→ 鑄造 NFT 書籍
+   │
+   └─→ 支付 / 分潤 → [READToken.sol]
+
 
 ---
 
