@@ -1,0 +1,290 @@
+{
+  "manifestVersion": "3.2",
+  "proxies": [
+    {
+      "address": "0xf8aacd773d21f3c28C89E8a9CF8463b8DEfbca8d",
+      "txHash": "0x9222b918033610f154f2791bb9e33129c0d2f39ad40e7225f3d0c45626d250db",
+      "kind": "uups"
+    }
+  ],
+  "impls": {
+    "294f41331ab5829b3a06627826eb58cbc00d1b5ddbca5f48c37b234dee16e38f": {
+      "address": "0x35746195bE64227f60BC7610DB72879611E64b8B",
+      "txHash": "0xd8a1ad4037b268216ae2a87acb8efc3e603cd6f93ba560e80fa1bd3de870af9c",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "opl",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address",
+            "contract": "ReadFiComplianceManagerV2",
+            "src": "contracts\\ReadFiComplianceManagerV2.sol:14"
+          },
+          {
+            "label": "gateway",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_contract(IComplianceGateway)8808",
+            "contract": "ReadFiComplianceManagerV2",
+            "src": "contracts\\ReadFiComplianceManagerV2.sol:17"
+          },
+          {
+            "label": "receipts",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(Receipt)8826_storage))",
+            "contract": "ReadFiComplianceManagerV2",
+            "src": "contracts\\ReadFiComplianceManagerV2.sol:25"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)73_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)13_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_contract(IComplianceGateway)8808": {
+            "label": "contract IComplianceGateway",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_mapping(t_uint256,t_struct(Receipt)8826_storage))": {
+            "label": "mapping(address => mapping(uint256 => struct ReadFiComplianceManagerV2.Receipt))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(Receipt)8826_storage)": {
+            "label": "mapping(uint256 => struct ReadFiComplianceManagerV2.Receipt)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Receipt)8826_storage": {
+            "label": "struct ReadFiComplianceManagerV2.Receipt",
+            "members": [
+              {
+                "label": "ok",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "expiry",
+                "type": "t_uint64",
+                "offset": 1,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "33ff8af40e35d42256e34ebb26e3cd457260de1b155b775eabe5d71496cdbf25": {
+      "address": "0x5Fee6b7fC067FcA597f378ce343AE2fcda5f69A1",
+      "txHash": "0x71f3d10f6ed006e27012ffd639ea1a90e2955fdc3723b26f421a02d4912699ab",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "opl",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address",
+            "contract": "ReadFiComplianceManagerV2",
+            "src": "contracts\\ReadFiComplianceManagerV2.sol:20"
+          },
+          {
+            "label": "gateway",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "ReadFiComplianceManagerV2",
+            "src": "contracts\\ReadFiComplianceManagerV2.sol:24"
+          },
+          {
+            "label": "receipts",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(Receipt)1454_storage))",
+            "contract": "ReadFiComplianceManagerV2",
+            "src": "contracts\\ReadFiComplianceManagerV2.sol:30"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)73_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)13_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_mapping(t_address,t_mapping(t_uint256,t_struct(Receipt)1454_storage))": {
+            "label": "mapping(address => mapping(uint256 => struct ReadFiComplianceManagerV2.Receipt))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(Receipt)1454_storage)": {
+            "label": "mapping(uint256 => struct ReadFiComplianceManagerV2.Receipt)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Receipt)1454_storage": {
+            "label": "struct ReadFiComplianceManagerV2.Receipt",
+            "members": [
+              {
+                "label": "ok",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "expiry",
+                "type": "t_uint64",
+                "offset": 1,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,136 @@
+openapi: 3.1.0
+info:
+  title: ReadFi MVP Backend API - Additions
+  version: 0.1.0
+servers:
+  - url: http://localhost:3000
+paths:
+  /api/auth/siwe/nonce:
+    post:
+      summary: 取得 SiWE Nonce
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  nonce: { type: string }
+                  domain: { type: string }
+                  chainId: { type: integer, example: 48898 }
+                  statement: { type: string }
+                  uri: { type: string }
+                  issuedAt: { type: string, format: date-time }
+
+  /api/auth/siwe/verify:
+    post:
+      summary: 驗證 SiWE 並簽發 JWT
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [message, signature]
+              properties:
+                message: { type: string }
+                signature: { type: string }
+      responses:
+        '200':
+          description: 驗證成功
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token: { type: string }
+                  expires_in: { type: integer, example: 900 }
+
+  /api/books/metadata/{id}:
+    get:
+      summary: 取得書籍 ERC Metadata JSON
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Metadata
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name: { type: string }
+                  description: { type: string }
+                  image: { type: string, format: uri }
+                  attributes:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        trait_type: { type: string }
+                        value: {}
+                  content_sha256: { type: string }
+
+  /api/books/list-by-owner:
+    get:
+      summary: 依地址查使用者書庫（別名 → /books?user=）
+      parameters:
+        - in: query
+          name: user
+          required: true
+          schema: { type: string, pattern: '^0x[a-fA-F0-9]{40}$' }
+      responses:
+        '200':
+          description: 書庫列表
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BooksResponse'
+
+  /api/transactions/{txHash}:
+    get:
+      summary: 查交易狀態（薄封裝）
+      parameters:
+        - in: path
+          name: txHash
+          required: true
+          schema: { type: string, pattern: '^0x[a-fA-F0-9]{64}$' }
+      responses:
+        '200':
+          description: 狀態
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status: { type: string, enum: [success, reverted] }
+                  blockNumber: { type: integer }
+                  from: { type: string }
+                  to: { type: string }
+                  gasUsed: { type: string }
+                  contractAddress: { type: string, nullable: true }
+
+components:
+  schemas:
+    BookItem:
+      type: object
+      required: [token_id, viewer_url]
+      properties:
+        token_id: { type: string, example: '1001' }
+        title: { type: string, example: The Future of Reading }
+        cover_image: { type: string, format: uri, example: https://cdn.readfi.app/books/1001.jpg }
+        viewer_url: { type: string, format: uri, example: https://readfi.app/viewer/1001 }
+        mint_tx: { type: string, example: 0x8af9...7d6 }
+        minted_at: { type: string, format: date-time, example: '2025-10-31T12:45:00Z' }
+
+    BooksResponse:
+      type: object
+      properties:
+        books:
+          type: array
+          items:
+            $ref: '#/components/schemas/BookItem'
