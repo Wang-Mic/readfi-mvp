@@ -165,11 +165,7 @@ pnpm dev
 
 | 項目            | 內容                                                                                                                              |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| 🎬 Demo Video | [即將上傳](#)                                                                                                                       |
-| 🧾 Pitch Deck | [docs/ReadFi_PitchDeck.pdf](./docs/ReadFi_PitchDeck.pdf)                                                                        |
-| 🧠 主合約        | [`ReadFiComplianceManagerV2`](https://repo.sourcify.dev/contracts/full_match/48898/0x5Fee6b7fC067FcA597f378ce343AE2fcda5f69A1/) |
 | 🧱 網絡         | Zircuit Testnet / Oasis Sapphire                                                                                                |
-| 👥 團隊         | ReadFi Team（Po-Han Chiang @NeuromodulationLab 等）                                                                                |
 
 ---
 
